@@ -1,0 +1,69 @@
+name: load chat model
+
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:  
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: load model
+        run: |
+          which python
+          date
+          python ./demo.py
+          #pytest -s -v ./test_1228.py
+          #pip install transformers==4.30.2
+          #pip install einops
+          #pip install torch
+          #pip install sentencepiece
+          #python internlm2_7b.py
+          
+      - name: Convert to base64 and embed
+        run: |
+          # 将图片转换为 base64
+          IMG_BASE64=$(base64 -w 0 ./output_simple.png)
+          
+          # 构建完整的 summary
+          cat >> $GITHUB_STEP_SUMMARY << EOF
+          # 📈 分析报告
+          
+          ## 性能比较图
+          
+          下图展示了不同模型的性能对比：
+          
+          <div align="center">
+          <img src="data:image/png;base64,$IMG_BASE64" 
+               alt="性能对比图" 
+               style="max-width: 90%; border: 1px solid #ddd; border-radius: 8px;">
+          </div>
+          <div align=center>
+          <img src="https://github.com/kkscilife/debugtmp/blob/main/qwen3-sft_comparison.png" 
+          style="width:80%">
+          </div>
+          
+          ## 关键指标
+          
+          | 模型 | 准确率 | 推理时间 | 内存使用 |
+          |------|--------|----------|----------|
+          | Model A | 92.3% | 45ms | 2.1GB |
+          | Model B | 94.7% | 52ms | 2.4GB |
+          | Model C | 96.1% | 61ms | 2.8GB |
+          
+          ## 结论
+          - Model C 准确率最高，但推理时间最长
+          - 需要根据实际场景权衡选择
+          
+          EOF
