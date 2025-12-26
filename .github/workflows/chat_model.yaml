@@ -50,7 +50,7 @@ jobs:
                style="max-width: 90%; border: 1px solid #ddd; border-radius: 8px;">
           </div>
           <div align=center>
-          <img src="https://raw.githubusercontent.com/kkscilife/xtuner/blob/ci/debug/qwen3-sft_comparison.png" 
+          <img src="https://raw.githubusercontent.com/kkscilife/xtuner/ci/debug/qwen3-sft_comparison.png" 
           style="width:80%">
           </div>
           
