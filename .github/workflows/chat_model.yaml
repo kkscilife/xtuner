@@ -45,7 +45,7 @@ jobs:
           下图展示了不同模型的性能对比：
           
           <div align="center">
-          <img src="data:image/png;base64,$IMG_BASE64" 
+          <img src="https://kkscilife.github.io/xtuner/qwen3-sft_comparison.png" 
                alt="性能对比图" 
                style="max-width: 90%; border: 1px solid #ddd; border-radius: 8px;">
           </div>
@@ -68,11 +68,11 @@ jobs:
           
           EOF
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ github.token }}
-          branch: gh-pages
-          folder: ./deploy
-          clean: true 
-          single-commit: true 
+          #- name: Deploy to GitHub Pages
+          #uses: JamesIves/github-pages-deploy-action@v4
+          #with:
+          #token: ${{ github.token }}
+          #branch: gh-pages
+          #folder: ./deploy
+          #clean: true 
+          #single-commit: true 
