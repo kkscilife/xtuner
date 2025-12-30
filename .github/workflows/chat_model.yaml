@@ -73,6 +73,6 @@ jobs:
         with:
           token: ${{ github.token }}
           branch: gh-pages
-          folder: ./output
+          folder: ./deploy
           clean: true 
           single-commit: true 
