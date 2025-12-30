@@ -34,7 +34,7 @@ jobs:
       - name: Convert to base64 and embed
         run: |
           # 将图片转换为 base64
-          IMG_BASE64=$(base64 -w 0 ./output_simple.png)
+          IMG_BASE64=$(base64 -w 0 ./deploy/output_simple.png)
           
           # 构建完整的 summary
           cat >> $GITHUB_STEP_SUMMARY << EOF
