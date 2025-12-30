@@ -67,3 +67,12 @@ jobs:
           - 需要根据实际场景权衡选择
           
           EOF
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ github.token }}
+          branch: gh-pages
+          folder: ./output
+          clean: true 
+          single-commit: true 
