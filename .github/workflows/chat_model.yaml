@@ -37,7 +37,7 @@ jobs:
           IMG_BASE64=$(base64 -w 0 ./deploy/output_simple.png)
           
           # 构建完整的 summary
-          cat >> $GITHUB_STEP_SUMMARY << EOF
+          cat >> $GITHUB_STEP_SUMMARY << 'EOF'
           # 📈 分析报告
           
           ## 性能比较图
