@@ -77,8 +77,8 @@ jobs:
           
           EOF
           mkdir ./${{ github.run_id }}
-          cp ./deploy/qwen3-sft_comparison.png ./${{ github.run_id }}/test5.png
-          cp ./deploy/output_simple.png ./${{ github.run_id }}/test6.png
+          cp ./deploy/qwen3-sft_comparison.png ./${{ github.run_id }}/test7.png
+          cp ./deploy/output_simple.png ./${{ github.run_id }}/test8.png
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -88,4 +88,4 @@ jobs:
           folder: ./${{ github.run_id }}
           target-folder: ${{ github.run_id }}
             #clean: true 
-          single-commit: true 
+            #single-commit: true 
