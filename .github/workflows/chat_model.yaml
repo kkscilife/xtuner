@@ -56,6 +56,7 @@ jobs:
           <details>
           <summary><strong>📊 点击查看详细日志与简要分析</strong></summary>
           **核心观察**：前几步loss下降明显，TGS在step 2后稳定在9000+。
+          
           ```json
           {"lr": 6e-05, "time/data_time": 0.3072, "time/step_time": 54.9137, "time/train_time": 55.2208, "time/eta_seconds": 878.8, "runtime_info/text_tokens": 65481, "runtime_info/step_consumed_tokens": 523938, "runtime_info/total_consumed_tokens": 523938, "runtime_info/tgs": 1192.4353455532862, "runtime_info/exp_tgs": 1186.0064542343516, "runtime_info/e2e_tgs": 1186.0064542343516, "memory/max_memory_GB": 71.147, "memory/reserved_memory_GB": 74.826, "grad_norm": 23.898910522460938, "loss/local_loss": 2.5080881118774414, "loss/reduced_llm_loss": 2.4380242824554443, "loss/reduced_balancing_loss": 0.07006383687257767, "loss/local_base_loss": 0.30335885286331177, "loss/efficient_attn_ratio": 0.007637234404683113, "step": 1}
           ```
