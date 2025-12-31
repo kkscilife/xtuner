@@ -76,12 +76,16 @@ jobs:
           - 需要根据实际场景权衡选择
           
           EOF
+          mkdir ./${{ github.run_id }}
+          cp ./deploy/qwen3-sft_comparison.png ./${{ github.run_id }}/test1.png
+          cp ./deploy/output_simple.png ./${{ github.run_id }}/test2.png
 
-          #- name: Deploy to GitHub Pages
-          #uses: JamesIves/github-pages-deploy-action@v4
-          #with:
-          #token: ${{ github.token }}
-          #branch: gh-pages
-          #folder: ./deploy
-          #clean: true 
-          #single-commit: true 
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ github.token }}
+          branch: gh-pages
+          folder: ./${{ github.run_id }}
+          target-folder: ${{ github.run_id }}
+          clean: true 
+          single-commit: true 
