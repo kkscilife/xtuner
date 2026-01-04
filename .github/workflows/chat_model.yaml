@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # 授予内容写入权限
-        #pages: write
+      pages: write
         #id-token: write
     strategy:
       matrix:
@@ -80,7 +80,6 @@ jobs:
           - 需要根据实际场景权衡选择
           
           EOF
-          echo "test"
           mkdir ./${{ github.run_id }}
           cp ./deploy/qwen3-sft_comparison.png ./${{ github.run_id }}/test11.png
           cp ./deploy/output_simple.png ./${{ github.run_id }}/test12.png
