@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # 授予内容写入权限
-      pages: write
+        #pages: write
         #id-token: write
     strategy:
       matrix:
